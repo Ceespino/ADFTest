@@ -1,0 +1,20 @@
+{
+	"name": "trigger2",
+	"properties": {
+		"runtimeState": "Stopped",
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Month",
+				"interval": 12,
+				"startTime": "2018-11-26T21:37:00.000Z",
+				"timeZone": "UTC",
+				"schedule": {
+					"monthDays": [
+						31
+					]
+				}
+			}
+		}
+	}
+}
