@@ -1,7 +1,7 @@
 {
 	"name": "pipeline12",
 	"properties": {
-		"description": "A creative description",
+		"description": "A creative description for this pipeline",
 		"activities": [
 			{
 				"name": "Wait1",
