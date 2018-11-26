@@ -1,0 +1,28 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"description": "A cool trigger",
+		"annotations": [
+			"Dummy Trigger"
+		],
+		"runtimeState": "Stopped",
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Week",
+				"interval": 1,
+				"startTime": "2018-11-19T21:30:00.000Z",
+				"timeZone": "UTC",
+				"schedule": {
+					"weekDays": [
+						"Monday",
+						"Wednesday",
+						"Tuesday",
+						"Friday",
+						"Thursday"
+					]
+				}
+			}
+		}
+	}
+}
