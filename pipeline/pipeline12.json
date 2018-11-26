@@ -7,13 +7,27 @@
 				"name": "Wait12",
 				"description": "A description",
 				"type": "Wait",
+				"dependsOn": [
+					{
+						"activity": "If Condition1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"typeProperties": {
 					"waitTimeInSeconds": 1
 				}
 			},
 			{
-				"name": "Append Variable1",
-				"type": "AppendVariable"
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"typeProperties": {
+					"expression": {
+						"value": "0==0",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
