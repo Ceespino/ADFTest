@@ -49,19 +49,27 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/pipeline12')]",
+			"name": "[concat(parameters('factoryName'), '/pipeline5s')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"description": "A creative description for this pipeline",
+				"description": "Pipeline 5 cool description!",
 				"activities": [
 					{
-						"name": "Wait12",
-						"description": "A description",
+						"name": "Wait one",
+						"type": "Wait",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"waitTimeInSeconds": 2
+						}
+					},
+					{
+						"name": "Wait2",
 						"type": "Wait",
 						"dependsOn": [
 							{
-								"activity": "If Condition1",
+								"activity": "Wait one",
 								"dependencyConditions": [
 									"Succeeded"
 								]
@@ -71,42 +79,18 @@
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
-					},
-					{
-						"name": "If Condition1",
-						"type": "IfCondition",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"expression": {
-								"value": "0==0",
-								"type": "Expression"
-							}
-						}
 					}
 				],
-				"parameters": {
-					"cc": {
-						"type": "String",
-						"defaultValue": "c"
-					}
-				},
-				"variables": {
-					"a": {
-						"type": "String",
-						"defaultValue": "a"
-					}
-				},
 				"annotations": []
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/pipeline5')]",
+			"name": "[concat(parameters('factoryName'), '/pipeline6')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"description": "Pipeline 5 description",
+				"description": "Cool pipeline description",
 				"activities": [
 					{
 						"name": "Wait1",
@@ -116,18 +100,22 @@
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
-					},
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline7')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
 					{
-						"name": "Wait2",
+						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [
-							{
-								"activity": "Wait1",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
+						"dependsOn": [],
 						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
@@ -135,6 +123,108 @@
 					}
 				],
 				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "A cool trigger",
+				"annotations": [
+					"Dummy Trigger"
+				],
+				"runtimeState": "Stopped",
+				"pipelines": [],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Week",
+						"interval": 1,
+						"startTime": "2018-11-19T21:30:00.000Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"weekDays": [
+								"Monday",
+								"Wednesday",
+								"Tuesday",
+								"Friday",
+								"Thursday"
+							]
+						}
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger2')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Month",
+						"interval": 12,
+						"startTime": "2018-11-26T21:37:00.000Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"monthDays": [
+								31
+							]
+						}
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger3')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2018-11-26T21:38:00.000Z",
+						"timeZone": "UTC"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger4')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Month",
+						"interval": 15,
+						"startTime": "2018-11-26T21:38:00.000Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"monthDays": [
+								11
+							]
+						}
+					}
+				}
 			},
 			"dependsOn": []
 		}
