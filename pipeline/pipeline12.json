@@ -10,6 +10,10 @@
 				"typeProperties": {
 					"waitTimeInSeconds": 1
 				}
+			},
+			{
+				"name": "Append Variable1",
+				"type": "AppendVariable"
 			}
 		],
 		"parameters": {
