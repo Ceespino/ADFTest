@@ -5,6 +5,21 @@
 			{
 				"name": "Wait1",
 				"type": "Wait",
+				"dependsOn": [
+					{
+						"activity": "Wait2",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"typeProperties": {
+					"waitTimeInSeconds": 1
+				}
+			},
+			{
+				"name": "Wait2",
+				"type": "Wait",
 				"typeProperties": {
 					"waitTimeInSeconds": 1
 				}
