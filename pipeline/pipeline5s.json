@@ -4,10 +4,10 @@
 		"description": "Pipeline 5 cool description!",
 		"activities": [
 			{
-				"name": "Wait1",
+				"name": "Wait one",
 				"type": "Wait",
 				"typeProperties": {
-					"waitTimeInSeconds": 1
+					"waitTimeInSeconds": 2
 				}
 			},
 			{
@@ -15,7 +15,7 @@
 				"type": "Wait",
 				"dependsOn": [
 					{
-						"activity": "Wait1",
+						"activity": "Wait one",
 						"dependencyConditions": [
 							"Succeeded"
 						]
