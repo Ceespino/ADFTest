@@ -1,6 +1,7 @@
 {
 	"name": "pipeline5",
 	"properties": {
+		"description": "Pipeline 5 description",
 		"activities": [
 			{
 				"name": "Wait1",
