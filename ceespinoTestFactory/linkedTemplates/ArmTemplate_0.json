@@ -13,11 +13,10 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/NewPipelineRenamed')]",
+			"name": "[concat(parameters('factoryName'), '/NewPipeline')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"description": "Edited",
 				"activities": [
 					{
 						"name": "Wait1",
