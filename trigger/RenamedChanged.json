@@ -1,7 +1,6 @@
 {
 	"name": "RenamedChanged",
 	"properties": {
-		"description": "Edited Description",
 		"runtimeState": "Stopped",
 		"type": "ScheduleTrigger",
 		"typeProperties": {
