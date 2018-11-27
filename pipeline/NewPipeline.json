@@ -1,6 +1,7 @@
 {
 	"name": "NewPipeline",
 	"properties": {
+		"description": "Edited",
 		"activities": [
 			{
 				"name": "Wait1",
