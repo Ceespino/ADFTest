@@ -3,10 +3,13 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Wait1",
-				"type": "Wait",
+				"name": "If Condition1",
+				"type": "IfCondition",
 				"typeProperties": {
-					"waitTimeInSeconds": 1
+					"expression": {
+						"value": "1===1",
+						"type": "Expression"
+					}
 				}
 			}
 		]
